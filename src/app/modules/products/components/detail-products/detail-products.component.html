@@ -1,0 +1,34 @@
+<div class="container-fluid m-top80 p-40" *ngIf="product">
+  <div class="row">
+    <div class="col-sm-6">
+      <img [src]="product.thumbnail" [alt]="product.title" width="100%" />
+      <div class="container-fluid m-top10">
+        <div class="row">
+          <div class="col-3" *ngFor="let item of product.images; let i = index" (click)="setPrincipalImage(item)">
+            <img
+              [src]="item"
+              class="grid-image"
+              [alt]="product.title + 'image number ' + i"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+      <small class="item-type"
+        ><span class="material-icons"> category </span>
+         {{ product.category }}</small
+      >
+      <br>
+      <h2 class="secondary-color">{{ product.price | currency : "USD" }}</h2>
+
+      <br />
+      <div class="primary-button">
+        <span class="material-icons"> add_shopping_cart </span>Agregar a carrito
+      </div>
+    </div>
+  </div>
+</div>

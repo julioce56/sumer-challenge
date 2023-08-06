@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'material-icons/iconfont/material-icons.css';
+
+html, body {
+  background: rgb(245, 245, 245);
+}
+
+$color-primary: #3A5ED7;
+$color-secondary: #F34AA1;
+
+@mixin full-center {
+  display: flex;
+  align-items: center;
+}
+
+.secondary-color {
+  color: $color-secondary;
+}
+
+.m-top10 {
+  margin-top: 10px;
+}
+
+.m-top80 {
+  margin-top: 80px;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.t-align-center {
+  text-align: center;
+}
+
+.t-align-right {
+  text-align: right;
+}
+
+.material-icons {
+  display: flex;
+}
+
+.primary-button {
+  width: fit-content;
+  background: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: white;
+  margin-top: 10px;
+  font-size: 13px;
+  &--right {
+    float: right;
+  }
+  &:hover {
+    cursor: pointer;
+    background: #597beb;
+  }
+}

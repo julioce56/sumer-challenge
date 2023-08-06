@@ -1,0 +1,15 @@
+@import '../../../../../styles';
+
+.grid-image {
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.item-type {
+  @include full-center;
+  & span {
+    margin-right: 5px;
+  }
+}
