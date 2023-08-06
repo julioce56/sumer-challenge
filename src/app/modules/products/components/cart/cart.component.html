@@ -1,0 +1,61 @@
+<div class="container-fluid m-top80 p-40">
+  <h2 *ngIf="products.length !== 0">Productos agregados</h2>
+  <br />
+  <div class="card mb-3" *ngFor="let product of products">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-2 link" (click)="goTo(product.id)">
+          <img class="card-image" [src]="product.thumbnail" alt="" />
+        </div>
+        <div class="col-sm-10">
+          <h3 class="title">{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary me-3"
+              (click)="validQuantity(product, false)"
+            >
+              <span class="material-icons"> remove </span>
+            </button>
+            {{ product.quantity }}
+            <button
+              type="button"
+              class="btn btn-primary ms-3"
+              (click)="validQuantity(product, true)"
+            >
+              <span class="material-icons"> add </span>
+            </button>
+            <strong class="ms-3 primary-color"
+              >{{ product.stock }} Disponibles!</strong
+            >
+          </div>
+          <br />
+          <strong
+            >Precio Unitario: {{ product.price | currency : "USD" }}</strong
+          ><br />
+          <strong
+            >Precio:
+            {{ product.price * product.quantity | currency : "USD" }}</strong
+          >
+          <div
+            class="secondary-button secondary-button--right"
+            (click)="removeProductFromCart(product)"
+          >
+            <span class="material-icons"> remove_shopping_cart </span>Remover
+            del carrito
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="products.length !== 0">
+    <h3>Total en precio: {{ totalValue | currency : "USD" }}</h3>
+    <h3>Total en cantidades: {{ totalQuantity }}</h3>
+  </ng-container>
+  <ng-container *ngIf="products.length === 0">
+    <h3 class="t-align-center secondary-color">
+      No tienes productos aún agregados
+    </h3>
+  </ng-container>
+</div>

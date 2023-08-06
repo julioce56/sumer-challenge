@@ -1,1 +1,29 @@
-<p>footer works!</p>
+<div class="footer">
+  <hr />
+<div class="container pb-3">
+  <div class="row t-align-center">
+    <div class="col-sm-4">
+      <strong>power by @julioce-sumer-challenge</strong>
+    </div>
+    <div class="col-sm-4">
+      <a
+      class="secondary-color"
+        href="https://www.sumerlabs.com/terms/politica-de-privacidad-de-datos-personales"
+        target="_blank"
+        >Politica de privacidad y términos</a
+      >
+    </div>
+    <div class="col-sm-4 footer-items">
+      <a *ngFor="let item of social" [href]="item.url" target="_blank">
+        <img
+          class="social-img"
+          [src]="item.logo"
+          width="30"
+          [alt]="item.alt"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>

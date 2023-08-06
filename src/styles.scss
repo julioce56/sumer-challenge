@@ -4,14 +4,33 @@
 
 html, body {
   background: rgb(245, 245, 245);
+  margin:0;
+  padding:0;
+  height: 100%;
 }
 
-$color-primary: #3A5ED7;
+$color-primary: #0D6EFD;
 $color-secondary: #F34AA1;
 
 @mixin full-center {
   display: flex;
   align-items: center;
+}
+
+@mixin button {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: white;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.primary-color {
+  color: $color-primary;
 }
 
 .secondary-color {
@@ -43,16 +62,8 @@ $color-secondary: #F34AA1;
 }
 
 .primary-button {
-  width: fit-content;
   background: $color-primary;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 15px;
-  border-radius: 25px;
-  color: white;
-  margin-top: 10px;
-  font-size: 13px;
+  @include button;
   &--right {
     float: right;
   }
@@ -60,4 +71,24 @@ $color-secondary: #F34AA1;
     cursor: pointer;
     background: #597beb;
   }
+}
+
+.secondary-button {
+  background: $color-secondary;
+  @include button;
+  &--right {
+    float: right;
+  }
+  &:hover {
+    cursor: pointer;
+    background: #ed62aa;
+  }
+}
+
+.link {
+  cursor: pointer;
+}
+
+.width-quantity-input {
+  width: 110px;
 }

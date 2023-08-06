@@ -11,3 +11,7 @@ export interface Product {
   thumbnail: string;
   title: string;
 }
+
+export interface CartProduct extends Product {
+  quantity: number;
+}

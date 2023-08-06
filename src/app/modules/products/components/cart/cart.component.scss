@@ -1,0 +1,11 @@
+.card-image {
+  width: 100%;
+  height: -webkit-fill-available;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .title {
+    margin-top: 10px;
+  }
+}

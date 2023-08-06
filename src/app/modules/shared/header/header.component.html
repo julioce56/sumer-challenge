@@ -3,10 +3,9 @@
     <a class="navbar-brand" href="products">
       <img src="assets/logos/sumer_commerce_02.png" alt="Logo" width="140" class="d-inline-block align-text-top">
     </a>
-    <span class="navbar-text">
-
+    <span class="navbar-text link" (click)="goToCart()">
       <span class="material-icons shop-icon">shopping_cart</span>
-      <span class="badge-custom">10</span>
+      <span class="badge-custom">{{ shoppingCount }}</span>
     </span>
   </div>
 </nav>

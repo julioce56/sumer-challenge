@@ -1,9 +1,15 @@
 <div class="container-fluid m-top80">
-  <div class="row">
-    <div class="col-sm-4" *ngFor="let product of products">
+  <div class="t-align-center" *ngIf="products.length === 0">
+    <div class="spinner-border text-primary mt-3" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Cargando productos...</p>
+  </div>
+  <div class="row" *ngIf="products.length !== 0">
+    <div class="col-sm-3" *ngFor="let product of products">
       <div class="card card-container">
         <img
-          [src]="product.thumbnail"
+        [lazy-src]="product.thumbnail"
           class="card-img-top card-container__thumbnail"
           [alt]="product.title"
           (click)="goToDetails(product.id)"
@@ -25,8 +31,20 @@
             {{ product.price | currency : "USD" }}
           </h2>
           <div class="t-align-right">
-            <div class="primary-button primary-button--right">
-              <span class="material-icons"> add_shopping_cart </span>Agregar a
+            <div
+              class="primary-button primary-button--right"
+              (click)="addProductToCart(product)"
+              *ngIf="!checkProductExist(product)"
+            >
+              <span class="material-icons"> add_shopping_cart </span>Agregar al
+              carrito
+            </div>
+            <div
+              class="secondary-button secondary-button--right"
+              (click)="removeProductFromCart(product)"
+              *ngIf="checkProductExist(product)"
+            >
+              <span class="material-icons"> remove_shopping_cart </span>Remover del
               carrito
             </div>
           </div>
@@ -35,3 +53,4 @@
     </div>
   </div>
 </div>
+
