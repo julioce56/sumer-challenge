@@ -1,3 +1,6 @@
+/**
+ * Product object
+ */
 export interface Product {
   brand: string;
   category: string;
@@ -12,6 +15,9 @@ export interface Product {
   title: string;
 }
 
+/**
+ * Product object for cart
+ */
 export interface CartProduct extends Product {
   quantity: number;
 }

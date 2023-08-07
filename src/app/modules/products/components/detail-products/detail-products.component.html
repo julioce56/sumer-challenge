@@ -33,7 +33,6 @@
       >
       <br />
       <div>
-
         <button
           type="button"
           class="btn btn-primary me-3"
@@ -53,11 +52,12 @@
           >{{ product.stock }} Disponibles!</strong
         >
       </div>
-      <br>
+      <br />
       <h2 class="secondary-color">{{ product.price | currency : "USD" }}</h2>
       <br />
       <div class="primary-button" (click)="addProductToCart(product)">
-        <span class="material-icons"> add_shopping_cart </span>{{ textOnButton }}
+        <span class="material-icons"> add_shopping_cart </span
+        >{{ textOnButton }}
       </div>
     </div>
   </div>
