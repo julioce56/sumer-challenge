@@ -1,4 +1,4 @@
-import { CartProduct } from "src/app/modules/products/components/models/product.model";
+import { CartProduct } from "src/app/modules/products/models/product.model";
 
 export interface ShoppingState {
   loading: boolean,

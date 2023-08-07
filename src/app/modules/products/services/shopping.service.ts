@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
-import { CartProduct, Product } from '../components/models/product.model';
+import { CartProduct, Product } from '../models/product.model';
 import { selectCartProducts } from 'src/app/state/selectors/shopping.selectors';
 import { loadCart } from 'src/app/state/actions/shopping.action';
 import { ToastrService } from 'ngx-toastr';

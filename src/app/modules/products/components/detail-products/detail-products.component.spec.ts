@@ -10,7 +10,7 @@ import * as productsMock from '../../../shared/testing/products.mock';
 import { ShoppingService } from '../../services/shopping.service';
 import { ProductService } from '../../services/products.service';
 import { of } from 'rxjs';
-import { Product } from '../models/product.model';
+import { Product } from '../../models/product.model';
 
 describe('DetailProductsComponent', () => {
   let component: DetailProductsComponent;
